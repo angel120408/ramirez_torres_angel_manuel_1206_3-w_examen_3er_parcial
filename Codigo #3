@@ -1,0 +1,33 @@
+class Triangulo:
+    # El constructor recibe los tres lados del triángulo y los guarda en una lista
+    def __init__(self, lado1, lado2, lado3):
+        self.lados = [lado1, lado2, lado3]
+
+    # Este método encuentra e imprime el valor del lado más grande
+    def lado_mayor(self):
+        # Usamos max() para encontrar el valor más grande entre los tres lados
+        print(f"El lado más grande es: {max(self.lados)}")
+
+    # Este método determina qué tipo de triángulo es
+    def tipo_triangulo(self):
+        # Si todos los lados son iguales, es un triángulo equilátero
+        if self.lados[0] == self.lados[1] == self.lados[2]:
+            print("Es un triángulo equilátero.")
+        # Si dos lados son iguales, es un triángulo isósceles
+        elif self.lados[0] == self.lados[1] or self.lados[1] == self.lados[2] or self.lados[0] == self.lados[2]:
+            print("Es un triángulo isósceles.")
+        # Si todos los lados son diferentes, es un triángulo escaleno
+        else:
+            print("Es un triángulo escaleno.")
+
+# Primero pedimos al usuario que ingrese los tres lados del triángulo
+lado1 = float(input("Introduce el primer lado: "))
+lado2 = float(input("Introduce el segundo lado: "))
+lado3 = float(input("Introduce el tercer lado: "))
+
+# Creamos un objeto de la clase Triangulo con los valores que el usuario ingresó
+triangulo = Triangulo(lado1, lado2, lado3)
+
+# Llamamos a los métodos para imprimir el lado más grande y el tipo de triángulo
+triangulo.lado_mayor()
+triangulo.tipo_triangulo()
