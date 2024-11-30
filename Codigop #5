@@ -1,0 +1,33 @@
+def menu():
+    print("\n1. Añadir")
+    print("2. Listar")
+    print("3. Buscar")
+    print("4. Salir")
+    return input("Elige una opción: ")
+
+def main():
+    contactos = []
+    while True:
+        opcion = menu()
+        if opcion == "1":
+            nombre = input("Nombre: ")
+            telefono = input("Teléfono: ")
+            contactos.append({"nombre": nombre, "telefono": telefono})
+        elif opcion == "2":
+            for c in contactos:
+                print(f"{c['nombre']} - {c['telefono']}")
+        elif opcion == "3":
+            nombre = input("Nombre a buscar: ")
+            for c in contactos:
+                if c["nombre"].lower() == nombre.lower():
+                    print(f"Encontrado: {c['nombre']} - {c['telefono']}")
+                    break
+            else:
+                print("No encontrado.")
+        elif opcion == "4":
+            break
+        else:
+            print("Opción no válida.")
+
+if __name__ == "__main__":
+    main(
