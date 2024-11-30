@@ -1,0 +1,36 @@
+print("Examen del 3er parcial")
+print("Codigo creado por: Ramirez Torres Angel Manuel De 3°W")
+print("Numero de control: 1206")
+print("CODIGO #1")
+
+class Alumno:
+    def __init__(self, nombre, calificacion):
+        # Inicializa los atributos del alumno
+        self.nombre = nombre
+        self.calificacion = calificacion
+
+    def imprimir_datos(self):
+        # Imprime el nombre y la calificación del alumno
+        print(f"Nombre del alumno: {self.nombre}")
+        print(f"Calificación del alumno: {self.calificacion}")
+
+    def resultado(self):
+        # Muestra el mensaje con el resultado de la calificación
+        if self.calificacion >= 5:
+            print(f"{self.nombre} ha aprobado con una calificación de {self.calificacion}.")
+        else:
+            print(f"{self.nombre} no ha aprobado con una calificación de {self.calificacion}.")
+
+
+# Solicitar datos al usuario
+nombre = input("Introduce el nombre del alumno: ")
+calificacion = float(input("Introduce la calificación del alumno: "))
+
+# Crear un objeto Alumno
+alumno = Alumno(nombre, calificacion)
+
+# Imprimir los datos del alumno
+alumno.imprimir_datos()
+
+# Mostrar el resultado
+alumno.resultado()
