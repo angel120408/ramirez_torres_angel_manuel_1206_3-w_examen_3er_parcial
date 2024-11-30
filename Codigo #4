@@ -1,0 +1,25 @@
+class Calculadora:
+    def __init__(self, num1, num2):
+        self.num1 = num1
+        self.num2 = num2
+
+    def operaciones(self):
+        suma = self.num1 + self.num2
+        resta = self.num1 - self.num2
+        multiplicacion = self.num1 * self.num2
+        division = self.num1 / self.num2 if self.num2 != 0 else "Error: División por cero"
+        return suma, resta, multiplicacion, division
+
+# Pedir los números al usuario
+num1 = int(input("Introduce el primer número: "))
+num2 = int(input("Introduce el segundo número: "))
+
+# Crear la calculadora y obtener los resultados
+calculadora = Calculadora(num1, num2)
+suma, resta, multiplicacion, division = calculadora.operaciones()
+
+# Imprimir los resultados
+print(f"Suma: {suma}")
+print(f"Resta: {resta}")
+print(f"Multiplicación: {multiplicacion}")
+print(f"División: {division}")
